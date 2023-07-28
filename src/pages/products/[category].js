@@ -1,5 +1,6 @@
 import RootLayout from "@/components/Layout/RootLayout";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 const categories = [
@@ -13,32 +14,45 @@ const categories = [
 ];
 
 const ProductsPage = ({ products }) => {
-  console.log("products:", products);
+
 
   return (
-    <div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       {products.map((product) => {
         return (
           <div
-            key={product.id}
-            className="card card-compact w-96 bg-base-100 shadow-xl"
+            key={product?._id}
+            className="card card-compact w-96 bg-green-50 shadow-xl rounded-none  border-2 border-green-200"
           >
-            <figure>
-              <Image
-                src={
-                  "https://in-media.apjonlinecdn.com/magefan_blog/What_is_FPS_and_How_Can_You_Optimise_Your_PC_for_Gaming_1.png"
-                }
-                alt={product.product_name}
-                width={300}
-                height={200}
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{product.product_name}</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Buy Now</button>
+            <Link href={`item/${product._id}`}>
+              <figure>
+                <Image
+                  src={
+                    "https://in-media.apjonlinecdn.com/magefan_blog/What_is_FPS_and_How_Can_You_Optimise_Your_PC_for_Gaming_1.png"
+                  }
+                  alt={product?.product_name}
+                  width={400}
+                  height={200}
+                />
+              </figure>
+              <div className="card-body ">
+                <div className="flex justify-between items-center ">
+                  <h3 className="text-xl font-bold">
+                    {product?.product_name}{" "}
+                  </h3>
+                </div>
+              <div className="flex items-center justify-between ">
+              <div className="badge badge-neutral ">{product?.category}</div>
+                <div className="badge badge-secondary ">{product?.status}</div>
               </div>
+              </div>
+            </Link>
+            <div className="flex justify-between items-center pb-3 px-3">
+              <p className="font-bold text-xl text-yellow-600">
+                ${product?.price}
+              </p>
+
+              <button className="btn btn-sm btn-success">Add To Builder</button>
             </div>
           </div>
         );
