@@ -19,6 +19,9 @@ const ProductDetails = ({ product }) => {
     is_home_featured,
   } = product;
 
+    console.log("reviews:", reviews)
+
+
   return (
     <div className="card lg:card-side bg-base-100 rounded-none">
       <Image

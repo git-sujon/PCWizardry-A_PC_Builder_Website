@@ -46,7 +46,7 @@ const Navbar = () => {
     <div className="navbar bg-success text-slate-700">
       <div className="navbar-start">
         <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+          <label tabIndex={2} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -63,7 +63,8 @@ const Navbar = () => {
             </svg>
           </label>
           <ul
-            tabIndex={0}
+            tabIndex={3}
+            style={{zIndex:"1000"}}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
@@ -83,13 +84,13 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1" style={{zIndex:"1000"}}>
           <li>
             <Link className="font-bold text-md" href="/">
               Home
             </Link>
           </li>
-          <li tabIndex={0}>
+          <li tabIndex={3}>
             <details>
               <summary className="font-bold text-md">Catagories</summary>
               <ul className="p-2">{catagories}</ul>
@@ -99,7 +100,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn  btn-neutral">Build Your PC</a>
+        <Link href={"build-my-pc"} className="btn  btn-neutral">Build Your PC</Link>
       </div>
     </div>
   );

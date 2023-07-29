@@ -1,17 +1,9 @@
 import RootLayout from "@/components/Layout/RootLayout";
+import categories from "@/components/utils/Catagories";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
-const categories = [
-  { name: "cpu" },
-  { name: "ram" },
-  { name: "motherboard" },
-  { name: "power-supply-unit" },
-  { name: "storage-device" },
-  { name: "monitor" },
-  { name: "others" },
-];
+
 
 const ProductsPage = ({ products }) => {
 
