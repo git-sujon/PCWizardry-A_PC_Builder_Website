@@ -1,3 +1,4 @@
+import FeaturedCatagories from "@/components/FeaturedCatagories";
 import HomeFeaturedCard from "@/components/HomeFeaturedCard";
 import HomeLayout from "@/components/Layout/HomeLayout";
 import Head from "next/head";
@@ -14,6 +15,8 @@ const HomePage = ({products}) => {
       </Head>
       <div>
        <HomeFeaturedCard products={products}/>
+       <FeaturedCatagories />
+
       </div>
     </>
   );

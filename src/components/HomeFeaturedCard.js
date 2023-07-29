@@ -4,31 +4,18 @@ import RatingStar from "./UI/RatingStar";
 import Link from "next/link";
 
 const HomeFeaturedCard = ({ products }) => {
-  // const {
-  //     _id,
-  //     product_name,
-  //     image,
-  //     category,
-  //     status,
-  //     price,
-  //     description,
-  //     key_features,
-  //     individual_rating,
-  //     average_rating,
-  //     reviews,
-  //     is_home_featured,
-  //   } = product;
+
 
   return (
-    <div>
+    <div className="mt-20">
         <h2 className="text-2xl font-bold text-slate-700 ">Featured products</h2>
         <div className="divider"></div> 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
-        {products.map((product) => {
+        {products?.map((product) => {
           return (
             <Link href={`products/item/${product?._id}`} 
               key={product?._id}
-              className="  transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg"
+              className="  transform overflow-hidden  bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg"
             >
               <Image
                 className="h-48 w-full object-cover object-center"
@@ -65,6 +52,8 @@ const HomeFeaturedCard = ({ products }) => {
           );
         })}
       </div>
+
+          
     </div>
   );
 };
