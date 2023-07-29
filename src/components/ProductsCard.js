@@ -3,7 +3,7 @@ import React from "react";
 import RatingStar from "./UI/RatingStar";
 import Link from "next/link";
 
-const HomeFeaturedCard = ({ products }) => {
+const ProductsCard = ({ products }) => {
 
 
   return (
@@ -13,7 +13,7 @@ const HomeFeaturedCard = ({ products }) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
         {products?.map((product) => {
           return (
-            <Link href={`products/item/${product?._id}`} 
+            <Link href={`../products/${product._id}`} 
               key={product?._id}
               className="  transform overflow-hidden  bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg"
             >
@@ -58,4 +58,4 @@ const HomeFeaturedCard = ({ products }) => {
   );
 };
 
-export default HomeFeaturedCard;
+export default ProductsCard;

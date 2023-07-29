@@ -5,37 +5,37 @@ const Navbar = () => {
   const catagories = (
     <>
       <li>
-        <Link className="font-bold text-md" href="/products/cpu">
+        <Link className="font-bold text-md" href="/catagories/cpu">
           CPU
         </Link>
       </li>
       <li>
-        <Link className="font-bold text-md" href="/products/motherboard">
+        <Link className="font-bold text-md" href="/catagories/motherboard">
           Motherboard
         </Link>
       </li>
       <li>
-        <Link className="font-bold text-md" href="/products/ram">
+        <Link className="font-bold text-md" href="/catagories/ram">
           RAM
         </Link>
       </li>
       <li>
-        <Link className="font-bold text-md" href="/products/power-supply-unit">
+        <Link className="font-bold text-md" href="/catagories/power-supply-unit">
           Power Supply Unit
         </Link>
       </li>
       <li>
-        <Link className="font-bold text-md" href="/products/storage-device">
+        <Link className="font-bold text-md" href="/catagories/storage-device">
           Storage Device
         </Link>
       </li>
       <li>
-        <Link className="font-bold text-md" href="/products/monitor">
+        <Link className="font-bold text-md" href="/catagories/monitor">
           Monitor
         </Link>
       </li>
       <li>
-        <Link className="font-bold text-md" href="/products/others">
+        <Link className="font-bold text-md" href="/catagories/others">
           Others
         </Link>
       </li>
