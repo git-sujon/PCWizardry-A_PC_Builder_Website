@@ -1,6 +1,6 @@
 # PCWizardry - PC Builder Website
 
-![PCWizardry](https://pcwizardry.vercel.app/public/favicon.ico)
+![PCWizardry](https://pcwizardry.vercel.app/)
 
 Welcome to PCWizardry, your one-stop destination for building your dream PC! This project is a PC Builder Website where users can select and customize PC components to create their perfect computer setup.
 
@@ -28,7 +28,7 @@ Visit the live website: [PCWizardry Live](https://pcwizardry.vercel.app/)
 
 1. Clone the repository:
 
-git clone https://github.com/git-sujon/pcwizardry.git
+git clone https://github.com/git-sujon/PCWizardry-A_PC_Builder_Website.git
 
 
 3. Set up MongoDB:
