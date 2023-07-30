@@ -22,7 +22,9 @@ ProductsPage.getLayout = function getLayout(page) {
 };
 
 export const getStaticPaths = async () => {
-
+  // if(typeof window === "undefined"){
+  //   return { paths:[], fallback: false };
+  // }
   const paths = categories.map((category) => ({
     params: { category: category?.name },
   }));
