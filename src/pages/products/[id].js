@@ -21,6 +21,9 @@ const ProductDetails = ({ product }) => {
 
     console.log("reviews:", reviews)
 
+    const  individual_ratingUpdate=Math.floor(individual_rating)
+      
+
 
   return (
     <div className="card lg:card-side bg-base-100 rounded-none">
@@ -47,6 +50,7 @@ const ProductDetails = ({ product }) => {
 
           {/* rating  */}
           <div className="flex items-center">
+          <p className=" font-semibold mr-2 text-slate-500">Avg Rating: <span className="text-xl font-bold">{average_rating}</span></p>
             <RatingStar rating={average_rating} />
             <div className="rating rating-half">
               {!Number.isInteger(average_rating) ? (
@@ -78,13 +82,18 @@ const ProductDetails = ({ product }) => {
 
         {/* price and action */}
 
-        <div className="flex items-end gap-x-20">
-          <div className="flex items-center mt-10 text-4xl font-semibold text-orange-600">
+        <div className="md:flex items-end gap-x-20">
+          <div className="flex items-center mt-10 text-4xl font-semibold text-orange-600 mb-3 md:mb-0">
             <p>$</p>
             <p>{price}</p>
           </div>
           <div >
-            <button className="btn btn-warning block btn-sm">Add To Builder</button>
+          <div className="flex items-center">
+            <p className=" font-semibold mr-2 text-slate-500">Your Rating: <span className="text-xl font-bold">{individual_ratingUpdate}</span></p>
+            <RatingStar rating={individual_ratingUpdate} />
+            <span className="font-semibold mr-2 text-slate-500 ml-1"> out of 5</span>
+           
+          </div>
           </div>
         </div>
       </div>

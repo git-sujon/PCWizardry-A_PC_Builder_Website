@@ -100,10 +100,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link href={"build-my-pc"} className="btn  btn-neutral">Build Your PC</Link>
+        <Link href={"/build-my-pc"} className="btn  btn-neutral">Build Your PC</Link>
       </div>
     </div>
   );
 };
-
+ 
 export default Navbar;

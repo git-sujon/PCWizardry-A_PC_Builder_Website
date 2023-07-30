@@ -10,7 +10,7 @@ const BuildPcProductsCard = ({products}) => {
               key={product?._id}
               className="card card-compact w-96 bg-green-50 shadow-xl rounded-none  border-2 border-green-200"
             >
-              <Link href={`item/${product._id}`}>
+              <Link href={`../products/${product._id}`}>
                 <figure>
                   <Image
                     src={

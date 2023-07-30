@@ -29,7 +29,7 @@ const FeaturedCatagories = () => {
               <h2 className="text-3xl font-bold text-white">{category.placeHolder}</h2>
 
               <div className="card-actions ">
-                <Link href={`catagories/${category.name}`} className="btn btn-success btn-sm ">Explore</Link>
+                <Link href={`/catagories/${category.name}`} className="btn btn-success btn-sm ">Explore</Link>
               </div>
             </div>
           </div>
