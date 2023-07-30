@@ -1,7 +1,9 @@
 import Link from "next/link";
-import React from "react";
+import { useSession, signOut } from "next-auth/react";
 
 const Navbar = () => {
+  const { data } = useSession();
+
   const catagories = (
     <>
       <li>
@@ -20,7 +22,10 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link className="font-bold text-md" href="/catagories/power-supply-unit">
+        <Link
+          className="font-bold text-md"
+          href="/catagories/power-supply-unit"
+        >
           Power Supply Unit
         </Link>
       </li>
@@ -64,7 +69,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={3}
-            style={{zIndex:"1000"}}
+            style={{ zIndex: "1000" }}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
@@ -76,7 +81,6 @@ const Navbar = () => {
               <a className="font-bold text-md">Catagories</a>
               <ul className="p-2">{catagories}</ul>
             </li>
-        
           </ul>
         </div>
         <Link href="/" className="btn btn-ghost normal-case text-2xl font-bold">
@@ -84,7 +88,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1" style={{zIndex:"1000"}}>
+        <ul className="menu menu-horizontal px-1" style={{ zIndex: "1000" }}>
           <li>
             <Link className="font-bold text-md" href="/">
               Home
@@ -96,14 +100,28 @@ const Navbar = () => {
               <ul className="p-2">{catagories}</ul>
             </details>
           </li>
-        
         </ul>
       </div>
-      <div className="navbar-end">
-        <Link href={"/build-my-pc"} className="btn  btn-neutral">Build Your PC</Link>
+      <div className="navbar-end gap-5">
+        <Link href={"/build-my-pc"} className="btn  btn-neutral">
+          Build Your PC
+        </Link>
+
+        {!data?.user ? (
+          <Link className="font-bold text-md btn btn-outline" href="/login">
+            Login
+          </Link>
+        ) : (
+          <button
+            className="font-bold text-md btn btn-outline"
+            onClick={() => signOut()}
+          >
+            SignOut
+          </button>
+        )}
       </div>
     </div>
   );
 };
- 
+
 export default Navbar;

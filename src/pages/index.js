@@ -5,7 +5,7 @@ import ProductsCard from "@/components/ProductsCard";
 
 const HomePage = ({products}) => {
 
-
+ 
 
   return (
     <>
