@@ -1,7 +1,24 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useDispatch } from 'react-redux';
+import { addProduct } from './redux/features/buildPcSlice';
+import { toast } from 'react-hot-toast';
 
 const BuildPcProductsCard = ({products}) => {
+
+const dispatch = useDispatch()
+
+
+  const addToBuilderHandler = (product)=> {
+
+    
+    dispatch(addProduct(product))
+
+    toast.success("Product add to Pc Builder")
+    
+  }
+
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {products.map((product) => {
@@ -38,7 +55,7 @@ const BuildPcProductsCard = ({products}) => {
                   ${product?.price}
                 </p>
   
-                <button className="btn btn-sm btn-success">Add To Builder</button>
+                <button onClick={()=>addToBuilderHandler(product)} className="btn btn-sm btn-success">Add To Builder</button>
               </div>
             </div>
           );

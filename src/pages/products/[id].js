@@ -1,4 +1,5 @@
 import RootLayout from "@/components/Layout/RootLayout";
+import InputReviews from "@/components/UI/InputReviews";
 import RatingStar from "@/components/UI/RatingStar";
 import Reviews from "@/components/UI/Reviews";
 import Image from "next/image";
@@ -92,19 +93,7 @@ const ProductDetails = ({ product }) => {
               <p>{price}</p>
             </div>
             <div>
-              <div className="flex items-center">
-                <p className=" font-semibold mr-2 text-slate-500">
-                  Your Rating:{" "}
-                  <span className="text-xl font-bold">
-                    {individual_ratingUpdate}
-                  </span>
-                </p>
-                <RatingStar rating={individual_ratingUpdate} />
-                <span className="font-semibold mr-2 text-slate-500 ml-1">
-                  {" "}
-                  out of 5
-                </span>
-              </div>
+            
             </div>
           </div>
         </div>
@@ -117,7 +106,7 @@ const ProductDetails = ({ product }) => {
         </h2>
     
           <Reviews reviews={reviews} />
-      
+          <InputReviews individual_ratingUpdate={individual_ratingUpdate}/>
       </div>
     </div>
   );
