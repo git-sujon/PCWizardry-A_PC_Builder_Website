@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import RatingStar from "./UI/RatingStar";
 import Link from "next/link";
 
 const ProductsCard = ({ products }) => {

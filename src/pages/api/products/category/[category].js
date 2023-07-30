@@ -6,7 +6,7 @@ export default async function mongodbConnection(req, res) {
 
         const category = req?.query?.category
 
-        console.log("category:", category)
+  
 
 
 

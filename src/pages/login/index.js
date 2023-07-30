@@ -1,7 +1,14 @@
 import RootLayout from "@/components/Layout/RootLayout";
 import { signIn  } from "next-auth/react";
+import { useRouter } from "next/router";
 import { BsGoogle, BsGithub } from "react-icons/bs";
 const LoginPage = () => {
+
+  const router = useRouter()
+
+  const {callbackUrl} = router.query
+
+  console.log("callbackUrl:", callbackUrl)
 
 
 
@@ -15,7 +22,7 @@ const LoginPage = () => {
           <BsGoogle
             className="text-8xl text-white"
             onClick={() =>
-              signIn("google", { callbackUrl: "http://localhost:3000/" })
+              signIn("google", { callbackUrl: callbackUrl || `${process.env.URL}` })
             }
           />
         </div>
@@ -23,7 +30,7 @@ const LoginPage = () => {
           <BsGithub
             className="text-8xl text-white"
             onClick={() =>
-              signIn("github", { callbackUrl: "http://localhost:3000/" })
+              signIn("github", { callbackUrl: callbackUrl || `${process.env.URL}` })
             }
           />
         </div>

@@ -20,10 +20,14 @@ ProductsPage.getLayout = function getLayout(page) {
 
 
 export async function getServerSideProps(context) {
+
+    
+
+
   const { params } = context;
 
   const res = await fetch(
-    `http://localhost:3000/api/products/category/${params?.category}`
+    `${process.env.URL}/api/products/category/${params?.category}`
   );
   const data = await res.json();
 

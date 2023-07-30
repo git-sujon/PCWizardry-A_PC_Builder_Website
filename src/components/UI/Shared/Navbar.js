@@ -104,7 +104,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end gap-5">
         <Link href={"/build-my-pc"} className="btn  btn-neutral">
-          Build Your PC
+        PC Builder
         </Link>
 
         {!data?.user ? (

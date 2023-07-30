@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "../UI/Shared/Navbar";
 import Footer from "../UI/Shared/Footer";
 import { Toaster } from "react-hot-toast";

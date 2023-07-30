@@ -34,8 +34,14 @@ HomePage.getLayout = function getLayout(page) {
 
 export async function getStaticProps() {
 
-
-  const res = await fetch(`http://localhost:3000/api/products/home_featured`);
+  // if(typeof window === "undefined"){
+  //   return {
+  //     props: {
+  //       products: [],
+  //     },
+  //   };
+  // }
+  const res = await fetch(`${process.env.URL}/api/products/home_featured`);
   const data = await res.json();
 
   return {
